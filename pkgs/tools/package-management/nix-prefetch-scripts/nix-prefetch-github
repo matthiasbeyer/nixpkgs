@@ -79,22 +79,10 @@ missing() {
     usage
 }
 
-if test -z "$repo"; then
-    missing repo
-fi
-if test -z "$owner"; then
-    missing owner
-fi
-if test -z "$rev"; then
-    missing revision
-fi
-
-if test -z "$name"; then
-  name="$repo-$rev-src"
-fi
-
-if test -z "$hashType"; then
-  hashType=sha256
-fi
+[[ -z "$repo"       ]] && missing repo
+[[ -z "$owner"      ]] && missing owner
+[[ -z "$rev"        ]] && missing revision
+[[ -z "$name"       ]] && name="$repo-$rev-src"
+[[ -z "$hashType"   ]] && hashType=sha256
 
 exec nix-prefetch-zip --url "$url" --name "$name" --hash "$expHash" --hash-type "$hashType" $leaveRoot

@@ -12,6 +12,7 @@ Options:
       --hash        hash        The hash of unpacked archive.
       --hash-type   type        Use the specified cryptographic hash algorithm, which can be one of md5, sha1, and sha256.
       --leave-root              Keep the root directory of the archive.
+      --url         url         Try to parse this URL and set the options accordingly. (experimental. Will ask you for confirmation)
       --help                    Show this help text.
 "
     exit 1
@@ -22,6 +23,7 @@ leaveRoot=""
 name=""
 argi=0
 argfun=""
+url=""
 
 # Setter functions for variables
 set_owner()     { owner=$1; }
@@ -31,6 +33,7 @@ set_site()      { site=$1; }
 set_name()      { name=$1; }
 set_expHash()   { expHash=$1; }
 set_hashType()  { hashType=$1; }
+set_url()       { url=$1; }
 
 for arg; do
   if test -z "$argfun"; then
@@ -43,6 +46,7 @@ for arg; do
       --hash)       argfun=set_expHash;;
       --hash-type)  argfun=set_hashType;;
       --leave-root) leaveRoot="--leave-root";;
+      --url)        argfun=set_url;;
 
       --help)       usage;;
       --*)          usage;;
@@ -68,6 +72,107 @@ for arg; do
     argfun=""
   fi
 done
+
+#
+#
+# Parser functions for parsing urls
+#
+# Note:
+#  These functions MUST return three space seperated values:
+#
+#       <owner> <repo> <rev>
+#
+#  If, for example, the owner cannot be parsed (as with savannah), there MUST be
+#  leading spaces so the parsing of the return works.
+#
+#
+
+github_parse_url() {
+  local AZ="[a-zA-Z0-9_\-]*"
+  local REV="[a-zA-Z0-9_\-\.]*"
+  local EXT="(tar\.gz|tar|zip)"
+  echo $1 | \
+      sed -r "s,(https://)?github\.com/($AZ)/($AZ)(/archive/($REV)\.$EXT)?,\2 \3 \5,"
+}
+
+bitbucket_parse_url() {
+  local AZ="[a-zA-Z0-9_\-]*"
+  local REV="[a-zA-Z0-9_\-\.]*"
+  local EXT="(tar\.gz|tar|zip)"
+  echo $1 | \
+      sed -r "s,(https://)?bitbucket.org/($AZ)/($AZ)(/get/($REV).$EXT)?,\2 \3 \5,"
+}
+
+gitorious_parse_url() {
+  local AZ="[a-zA-Z0-9_\-]*"
+  local REV="[a-zA-Z0-9_\-\.]*"
+  local EXT="(tar\.gz|tar|zip)"
+  echo $1 | \
+      sed -r "s,(https://)?gitorious.org/($AZ)/($AZ)(/archive/($REV).$EXT)?,\2 \3 \5,"
+}
+
+savannah_parse_url() {
+  local AZ="[a-zA-Z0-9_\-]*"
+  local REV="[a-zA-Z0-9_\-\.]*"
+  local EXT="(tar\.gz|tar|zip)"
+  echo $1 | \
+      sed -r "s,(http://)?git.savannah.gnu.org/cgit/($AZ).git/snapshot/($AZ)-($REV).$EXT,  \2 \4,"
+}
+
+repoorcz_parse_url() {
+  savannah_parse_url "$1" # works exactly the same
+}
+
+gitlab_parse_url() {
+  local AZ="[a-zA-Z0-9_\-]*"
+  local REV="[a-zA-Z0-9_\-\.]*"
+  local EXT="(tar\.gz|tar|zip)"
+  echo $1 | \
+      sed -r "s,(https://)?gitlab.com/($AZ)/($AZ)/repository/archive.tar.gz?ref=($REV),\2 \3 \4,"
+}
+
+#
+# To confirm a variable
+# Arguments:
+#   1) Name of the variable
+#   2) Value of the variable
+#
+confirm_variable() {
+	local answer
+  local scriptname="$(basename $0 | sed 's,\-wrapped,,')"
+	echo -ne "${scriptname}: Variable correct? $1 = '$2' [yN]? "
+	read answer; echo
+
+	if [[ ! "${answer}" =~ ^[Yy]$ ]]
+  then
+    echo "Variable not correct. Aborting script"
+    exit 1
+  fi
+}
+
+if [[ ! -z "$url" ]]
+then
+    # trying to parse URL to set the options
+
+    for _site in github bitbucket gitorious savannah repoorcz gitlab
+    do
+      if [[ $(echo "$url" | grep $_site) ]]
+      then
+        site=$_site
+        break
+      fi
+    done
+
+    site_vars="$(${site}_parse_url "$url")"
+
+    owner=$(echo $site_vars | cut -d " " -f 1)
+    repo=$( echo $site_vars | cut -d " " -f 2)
+    rev=$(  echo $site_vars | cut -d " " -f 3)
+
+    confirm_variable owner "$owner"
+    confirm_variable repo  "$repo"
+    confirm_variable rev   "$rev"
+fi
 
 case "$site" in
   "github")     url="https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" ;;

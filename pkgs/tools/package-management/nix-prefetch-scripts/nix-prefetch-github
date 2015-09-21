@@ -22,19 +22,22 @@ leaveRoot=""
 name=""
 argi=0
 argfun=""
+
 for arg; do
   if test -z "$argfun"; then
     case $arg in
-      --owner) argfun=set_owner;;
-      --repo) argfun=set_repo;;
-      --revision) argfun=set_rev;;
-      --site) argfun=set_site;;
-      --name) argfun=set_name;;
-      --hash) argfun=set_expHash;;
-      --hash-type) argfun=set_hashType;;
+      --owner)      argfun=set_owner;;
+      --repo)       argfun=set_repo;;
+      --revision)   argfun=set_rev;;
+      --site)       argfun=set_site;;
+      --name)       argfun=set_name;;
+      --hash)       argfun=set_expHash;;
+      --hash-type)  argfun=set_hashType;;
       --leave-root) leaveRoot="--leave-root";;
-      --help) usage;;
-      --*) usage;;
+
+      --help)       usage;;
+      --*)          usage;;
+
       *) argi=$(($argi + 1))
          case $argi in
            1) owner=$arg;;
@@ -59,12 +62,12 @@ for arg; do
 done
 
 case "$site" in
-  "github") url="https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" ;;
-  "bitbucket") url="https://bitbucket.org/${owner}/${repo}/get/${rev}.tar.gz" ;;
-  "gitorious") url="https://gitorious.org/${owner}/${repo}/archive/${rev}.tar.gz";;
-  "savannah") url="http://git.savannah.gnu.org/cgit/${repo}.git/snapshot/${repo}-${rev}.tar.gz";;
-  "repoorcz") url="http://git.savannah.gnu.org/cgit/${repo}.git/snapshot/${repo}-${rev}.tar.gz";;
-  "gitlab") url="https://gitlab.com/${owner}/${repo}/repository/archive.tar.gz?ref=${rev}";;
+  "github")     url="https://github.com/${owner}/${repo}/archive/${rev}.tar.gz" ;;
+  "bitbucket")  url="https://bitbucket.org/${owner}/${repo}/get/${rev}.tar.gz" ;;
+  "gitorious")  url="https://gitorious.org/${owner}/${repo}/archive/${rev}.tar.gz";;
+  "savannah")   url="http://git.savannah.gnu.org/cgit/${repo}.git/snapshot/${repo}-${rev}.tar.gz";;
+  "repoorcz")   url="http://git.savannah.gnu.org/cgit/${repo}.git/snapshot/${repo}-${rev}.tar.gz";;
+  "gitlab")     url="https://gitlab.com/${owner}/${repo}/repository/archive.tar.gz?ref=${rev}";;
   *)
     echo "Error: unknown --site $site given" >&2
     usage

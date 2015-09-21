@@ -23,6 +23,15 @@ name=""
 argi=0
 argfun=""
 
+# Setter functions for variables
+set_owner()     { owner=$1; }
+set_repo()      { repo=$1; }
+set_rev()       { rev=$1; }
+set_site()      { site=$1; }
+set_name()      { name=$1; }
+set_expHash()   { expHash=$1; }
+set_hashType()  { hashType=$1; }
+
 for arg; do
   if test -z "$argfun"; then
     case $arg in
@@ -53,8 +62,7 @@ for arg; do
   else
     case $argfun in
       set_*)
-        var=$(echo $argfun | sed 's,^set_,,')
-        eval "$var=\$arg"
+        $argfun $arg
         ;;
     esac
     argfun=""

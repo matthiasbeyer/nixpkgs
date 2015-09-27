@@ -193,7 +193,7 @@ in {
       preStart = ''
         mkdir -p ${cfg.dataDir}
 
-        if [[ ! -e ${cfg.dataDir}/.is_initialized ]]
+        if [[ ! -e "${cfg.dataDir}/.is_initialized" ]]
         then
           ${pkgs.taskserver}/bin/taskd init
           ${pkgs.taskserver}/pki/generate

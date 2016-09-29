@@ -1,12 +1,13 @@
-{ stdenv, fetchgit, pkgs, python3Packages }:
+{ stdenv, fetchFromGitHub, pkgs, python3Packages }:
 
 python3Packages.buildPythonApplication rec {
   version = "2016-09-29-76945c320e6f028223e4420956c80c421c4fe74a";
   name = "bean-add-${version}";
   namePrefix = "";
 
-  src = fetchgit {
-    url = "https://github.com/simon-v/bean-add/";
+  src = fetchFromGitHub {
+    owner = "simon-v";
+    repo = "bean-add";
     rev = "76945c320e6f028223e4420956c80c421c4fe74a";
     sha256 = "0dslzaimfwqvwz4z1qlmjvr5gklfd9n6hbsghl375ndfj8qgql1y";
   };

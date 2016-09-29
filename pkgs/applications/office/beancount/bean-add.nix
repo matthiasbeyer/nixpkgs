@@ -1,8 +1,7 @@
-{ stdenv, fetchFromGitHub, pkgs, python3Packages }:
+{ stdenv, fetchFromGitHub, python3Packages }:
 
-python3Packages.buildPythonApplication rec {
+stdenv.mkDerivation rec {
   name = "bean-add-2016-09-29";
-  namePrefix = "";
 
   src = fetchFromGitHub {
     owner = "simon-v";
@@ -13,15 +12,11 @@ python3Packages.buildPythonApplication rec {
 
   propagatedBuildInputs = with python3Packages; [ readline ];
 
-  phases = [ "unpackPhase" "patchPhase" "installPhase" "fixupPhase" ];
-
   installPhase = ''
-    # patchShebangs bean-add does not work or I am too dumb to use it
-    sed -i "s,/usr/bin/python,/usr/bin/env python," bean-add
-
     mkdir -p $out/bin/
     cp bean-add $out/bin/bean-add
     chmod +x $out/bin/bean-add
+    wrapPythonProgram $out/bin/bean-add
   '';
 
   meta = {

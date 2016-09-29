@@ -1,8 +1,7 @@
 { stdenv, fetchFromGitHub, pkgs, python3Packages }:
 
 python3Packages.buildPythonApplication rec {
-  version = "2016-09-29-76945c320e6f028223e4420956c80c421c4fe74a";
-  name = "bean-add-${version}";
+  name = "bean-add-2016-09-29";
   namePrefix = "";
 
   src = fetchFromGitHub {

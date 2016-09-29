@@ -10,6 +10,8 @@ stdenv.mkDerivation rec {
     sha256 = "0dslzaimfwqvwz4z1qlmjvr5gklfd9n6hbsghl375ndfj8qgql1y";
   };
 
+  buildInputs = [ python3Packages.wrapPython ];
+
   propagatedBuildInputs = with python3Packages; [ readline ];
 
   installPhase = ''

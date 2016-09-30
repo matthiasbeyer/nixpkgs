@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     mkdir -p $out/bin/
     cp bean-add $out/bin/bean-add
     chmod +x $out/bin/bean-add
-    wrapPythonProgram $out/bin/bean-add
+    wrapPythonPrograms $out/bin/bean-add
   '';
 
   meta = {

@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub, python3Packages }:
+{ stdenv, fetchFromGitHub, pythonPackages }:
 
 stdenv.mkDerivation rec {
   name = "bean-add-2016-09-29";
@@ -10,15 +10,12 @@ stdenv.mkDerivation rec {
     sha256 = "0dslzaimfwqvwz4z1qlmjvr5gklfd9n6hbsghl375ndfj8qgql1y";
   };
 
-  buildInputs = [ python3Packages.wrapPython ];
-
-  propagatedBuildInputs = with python3Packages; [ readline ];
+  propagatedBuildInputs = with pythonPackages; [ python readline ];
 
   installPhase = ''
     mkdir -p $out/bin/
     cp bean-add $out/bin/bean-add
     chmod +x $out/bin/bean-add
-    wrapPythonPrograms $out/bin/bean-add
   '';
 
   meta = {

@@ -23,7 +23,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Network debugging and analysis tool";
-    homepage    = http://netalyzr.icsi.berkeley.edu;
     maintainers = with maintainers; [ peterhoeg ];
     platforms   = platforms.all;
   };

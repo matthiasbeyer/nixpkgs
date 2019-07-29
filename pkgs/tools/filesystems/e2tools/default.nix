@@ -16,7 +16,6 @@ stdenv.mkDerivation rec {
   enableParallelBuilding = true;
 
   meta = {
-    homepage = http://home.earthlink.net/~k_sheff/sw/e2tools/;
     description = "Utilities to read/write/manipulate files in an ext2/ext3 filesystem";
     license = stdenv.lib.licenses.gpl2;
     platforms = stdenv.lib.platforms.linux;

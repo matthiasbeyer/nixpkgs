@@ -16,7 +16,6 @@ buildPythonPackage rec {
   disabled = isPy3k;
 
   meta = with stdenv.lib; {
-    homepage = "http://code.google.com/p/slowaes/";
     description = "AES implemented in pure python";
     license = with licenses; [ asl20 ];
   };

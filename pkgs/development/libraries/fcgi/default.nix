@@ -24,7 +24,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "A language independent, scalable, open extension to CG";
-    homepage = http://www.fastcgi.com/;
     license = "FastCGI see LICENSE.TERMS";
     platforms = platforms.all;
   };

@@ -23,7 +23,6 @@ fetchzip rec {
 
       Designed by Pablo Impallari and Andres Torresi.
     '';
-    homepage = http://www.impallari.com/projects/overview/encode;
     license = licenses.ofl;
     maintainers = with maintainers; [ cmfwyp ];
     platforms = platforms.all;

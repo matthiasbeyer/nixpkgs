@@ -17,7 +17,6 @@ pythonPackages.buildPythonPackage rec {
   meta = {
     description = "a toolkit for working with nanopore sequencing data from Oxford Nanopore";
     license = stdenv.lib.licenses.mit;
-    homepage = http://poretools.readthedocs.io/en/latest/;
     maintainers = [stdenv.lib.maintainers.rybern];
   };
 }

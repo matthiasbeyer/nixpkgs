@@ -36,7 +36,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "A full configuration manager for JWM";
-    homepage = https://joewing.net/projects/jwm;
     license = licenses.gpl3;
     platforms = platforms.linux;
     maintainers = [ maintainers.romildo ];

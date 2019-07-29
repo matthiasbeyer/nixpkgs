@@ -538,7 +538,6 @@ ltermbox = buildLuarocksPackage {
   propagatedBuildInputs = [ lua ];
 
   meta = with stdenv.lib; {
-    homepage = "http://code.google.com/p/termbox";
     description = "A termbox library package";
     license = {
       fullName = "New BSD License";

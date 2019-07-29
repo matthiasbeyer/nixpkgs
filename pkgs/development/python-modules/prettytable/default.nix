@@ -21,7 +21,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Simple Python library for easily displaying tabular data in a visually appealing ASCII table format";
-    homepage = http://code.google.com/p/prettytable/;
     license = licenses.bsd3;
   };
 

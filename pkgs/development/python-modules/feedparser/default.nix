@@ -16,7 +16,6 @@ buildPythonPackage rec {
   doCheck = false;
 
   meta = with stdenv.lib; {
-    homepage = http://code.google.com/p/feedparser/;
     description = "Universal feed parser";
     license = licenses.bsd2;
     maintainers = with maintainers; [ domenkozar ];

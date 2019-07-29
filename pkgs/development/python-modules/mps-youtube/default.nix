@@ -31,7 +31,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Terminal based YouTube player and downloader";
-    homepage = https://github.com/np1/mps-youtube;
     license = licenses.gpl3;
     maintainers = with maintainers; [ odi ];
   };

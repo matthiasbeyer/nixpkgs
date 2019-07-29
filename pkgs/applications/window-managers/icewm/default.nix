@@ -36,7 +36,6 @@ stdenv.mkDerivation rec {
       IceWM is a window manager for the X Window System. The goal of
       IceWM is speed, simplicity, and not getting in the user's way.
     '';
-    homepage = http://www.icewm.org/;
     license = licenses.lgpl2;
     maintainers = [ maintainers.AndersonTorres ];
     platforms = platforms.linux;

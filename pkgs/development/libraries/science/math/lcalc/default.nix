@@ -89,7 +89,6 @@ stdenv.mkDerivation rec {
   ];
 
   meta = with stdenv.lib; {
-    homepage = http://oto.math.uwaterloo.ca/~mrubinst/L_function_public/L.html;
     description = "A program for calculating with L-functions";
     license = with licenses; [ gpl2 ];
     maintainers = with maintainers; [ timokau ];

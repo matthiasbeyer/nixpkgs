@@ -16,7 +16,6 @@ buildPythonPackage rec {
   doCheck = false;
 
   meta = with stdenv.lib; {
-    homepage = https://code.google.com/p/gdata-python-client/;
     description = "Python client library for Google data APIs";
     license = licenses.asl20;
   };

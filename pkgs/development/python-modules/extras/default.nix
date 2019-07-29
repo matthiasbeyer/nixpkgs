@@ -17,7 +17,6 @@ buildPythonPackage rec {
 
   meta = {
     description = "A module provides basic functions for parsing mime-type names and matching them against a list of media-ranges";
-    homepage = https://code.google.com/p/mimeparse/;
     license = lib.licenses.mit;
   };
 }

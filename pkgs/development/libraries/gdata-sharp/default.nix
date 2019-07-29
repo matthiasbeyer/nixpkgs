@@ -27,7 +27,6 @@ in stdenv.mkDerivation rec {
   makeFlags = [ "PREFIX=$(out)" ];
 
   meta = with stdenv.lib; {
-    homepage = https://code.google.com/archive/p/google-gdata/;
 
     description = "The Google Data APIs";
     longDescription = ''

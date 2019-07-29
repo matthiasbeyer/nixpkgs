@@ -53,7 +53,6 @@ in stdenv.mkDerivation {
       firmware to the radio, backing up model settings, editing settings and
       running radio simulators.
     '';
-    homepage = https://open-tx.org/;
     license = stdenv.lib.licenses.gpl2;
     platforms = [ "i686-linux" "x86_64-linux" ];
     maintainers = with maintainers; [ elitak ];

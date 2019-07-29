@@ -17,7 +17,6 @@ buildGoPackage rec {
 
   meta = with stdenv.lib; {
     description = "C14 is designed for data archiving & long-term backups.";
-    homepage = https://www.online.net/en/c14;
     license = licenses.mit;
     maintainers = with maintainers; [ apeyroux ];
   };

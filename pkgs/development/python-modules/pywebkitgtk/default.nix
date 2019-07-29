@@ -19,7 +19,6 @@ buildPythonPackage rec {
   buildInputs = [ pygtk pkgs.gtk2 pkgs.libxml2 pkgs.libxslt pkgs.libsoup pkgs.webkitgtk24x-gtk2 pkgs.icu ];
 
   meta = with stdenv.lib; {
-    homepage = "https://code.google.com/p/pywebkitgtk/";
     description = "Python bindings for the WebKit GTK+ port";
     license = licenses.lgpl2Plus;
   };

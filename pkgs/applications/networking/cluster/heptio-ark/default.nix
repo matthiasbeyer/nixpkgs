@@ -17,7 +17,6 @@ buildGoPackage rec {
 
   meta = with stdenv.lib; {
     description = "A utility for managing disaster recovery, specifically for your Kubernetes cluster resources and persistent volumes";
-    homepage = https://heptio.github.io/ark/;
     license = licenses.asl20;
     maintainers = [maintainers.mbode];
     platforms = platforms.unix;

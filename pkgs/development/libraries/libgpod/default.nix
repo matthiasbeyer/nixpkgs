@@ -30,7 +30,6 @@ in stdenv.mkDerivation rec {
     ++ lib.optionals monoSupport [ mono gtk-sharp-2_0 ];
 
   meta = {
-    homepage = https://gtkpod.sourceforge.net/;
     description = "Library used by gtkpod to access the contents of an ipod";
     license = "LGPL";
     platforms = stdenv.lib.platforms.gnu ++ stdenv.lib.platforms.linux;

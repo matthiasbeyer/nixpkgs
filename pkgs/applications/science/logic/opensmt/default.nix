@@ -18,7 +18,6 @@ stdenv.mkDerivation rec {
     maintainers = [ maintainers.raskin ];
     platforms = platforms.linux;
     license = licenses.gpl3;
-    homepage = http://code.google.com/p/opensmt/;
     broken = true;
     downloadPage = "http://code.google.com/p/opensmt/downloads/list";
   };

@@ -24,7 +24,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Python bindings for libev";
-    homepage = https://code.google.com/p/pyev/;
     license = licenses.gpl3;
     maintainers = [ maintainers.bjornfor ];
   };

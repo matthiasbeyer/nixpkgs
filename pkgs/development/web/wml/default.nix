@@ -56,7 +56,6 @@ perlPackages.buildPerlPackage rec {
   installTargets = "install";
 
   meta = with stdenv.lib; {
-    homepage = http://thewml.org/;
     description = "Off-line HTML generation toolkit for Unix";
     license = licenses.gpl2;
     platforms = platforms.linux;

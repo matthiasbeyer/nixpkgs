@@ -19,7 +19,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "A database schema evolution tool for the Django web framework";
-    homepage = http://code.google.com/p/django-evolution/;
     license = licenses.bsd0;
   };
 

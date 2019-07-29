@@ -117,7 +117,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Easy automated syncing between your computers and your MEGA Cloud Drive";
-    homepage    = https://mega.nz/;
     license     = licenses.unfree;
     platforms   = [ "i686-linux" "x86_64-linux" ];
     maintainers = [ maintainers.michojel ];

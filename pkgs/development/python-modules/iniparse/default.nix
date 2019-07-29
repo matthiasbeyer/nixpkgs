@@ -22,7 +22,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Accessing and Modifying INI files";
-    homepage = http://code.google.com/p/iniparse/;
     license = licenses.mit;
     maintainers = with maintainers; [ danbst ];
   };

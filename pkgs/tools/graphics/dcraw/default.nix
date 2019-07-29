@@ -23,7 +23,6 @@ stdenv.mkDerivation rec {
   '';
 
   meta = {
-    homepage = http://www.cybercom.net/~dcoffin/dcraw/;
     description = "Decoder for many camera raw picture formats";
     license = stdenv.lib.licenses.free;
     platforms = stdenv.lib.platforms.unix; # Once had cygwin problems

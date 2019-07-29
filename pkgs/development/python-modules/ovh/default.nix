@@ -17,7 +17,6 @@ buildPythonPackage rec {
 
   meta = {
     description = "Thin wrapper around OVH's APIs";
-    homepage = http://api.ovh.com/;
     license = lib.licenses.bsd2;
     maintainers = [ lib.maintainers.makefu ];
   };

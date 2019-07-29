@@ -21,7 +21,6 @@ stdenv.mkDerivation {
   buildInputs = [ unzip cmake python ];
 
   meta = {
-    homepage = http://people.cs.ubc.ca/~mariusm/flann/;
     license = stdenv.lib.licenses.bsd3;
     description = "Fast approximate nearest neighbor searches in high dimensional spaces";
     maintainers = with stdenv.lib.maintainers; [viric];

@@ -23,7 +23,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Recursive descent parsing library based on functional combinators";
-    homepage = https://code.google.com/p/funcparserlib/;
     license = licenses.mit;
     platforms = platforms.unix;
   };

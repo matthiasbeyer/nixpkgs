@@ -29,7 +29,6 @@ stdenv.mkDerivation rec {
   doCheck = stdenv.isLinux;
 
   meta = with stdenv.lib; {
-    homepage = https://libopenraw.freedesktop.org/wiki/Exempi/;
     platforms = platforms.linux ++ platforms.darwin;
     license = licenses.bsd3;
   };

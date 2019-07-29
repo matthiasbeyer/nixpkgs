@@ -20,7 +20,6 @@ buildPythonPackage rec {
 
   meta = {
     description = "User-space driver for modern FTDI devices";
-    homepage = "http://github.com/eblot/pyftdi";
     license = lib.licenses.lgpl2;
   };
 }

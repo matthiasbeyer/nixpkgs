@@ -22,7 +22,6 @@ in fetchurl rec {
 
   meta = {
     description = "Pan-unicode version of Fixedsys, a classic DOS font.";
-    homepage = http://www.fixedsysexcelsior.com/;
     platforms = stdenv.lib.platforms.all;
     license = stdenv.lib.licenses.publicDomain;
     maintainers = [ stdenv.lib.maintainers.ninjatrappeur ];

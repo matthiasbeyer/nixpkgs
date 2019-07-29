@@ -82,7 +82,6 @@ else stdenv.mkDerivation {
 
   meta = with stdenv.lib; {
     description = "Spotify API library";
-    homepage    = https://developer.spotify.com/technologies/libspotify;
     maintainers = with maintainers; [ lovek323 ];
     license     = licenses.unfree;
   };

@@ -31,7 +31,6 @@ stdenv.mkDerivation rec {
   '';
 
   meta = {
-    homepage = http://gummi.midnightcoding.org/;
     description = "Simple LaTex editor for GTK users";
     license = stdenv.lib.licenses.mit;
     maintainers = with stdenv.lib.maintainers; [ flokli ];

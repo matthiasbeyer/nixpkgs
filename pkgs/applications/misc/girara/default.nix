@@ -30,7 +30,6 @@ stdenv.mkDerivation rec {
   '';
 
   meta = with stdenv.lib; {
-    homepage = https://pwmt.org/projects/girara/;
     description = "User interface library";
     longDescription = ''
       girara is a library that implements a GTK+ based VIM-like user interface

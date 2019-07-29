@@ -37,7 +37,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "A desktop-wide extension service used by elementary OS";
-    homepage = https://github.com/elementarycontractor;
     license = licenses.gpl3Plus;
     platforms = platforms.linux;
     maintainers = pantheon.maintainers;

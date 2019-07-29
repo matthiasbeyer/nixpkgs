@@ -5,7 +5,6 @@ buildPythonPackage rec {
   version = "20181111";
 
   meta = {
-    homepage = https://code.google.com/p/google-diff-match-patch/;
     description = "Diff, Match and Patch libraries for Plain Text";
     license = lib.licenses.asl20;
   };

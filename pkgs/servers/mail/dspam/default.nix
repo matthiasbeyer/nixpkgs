@@ -99,7 +99,6 @@ in stdenv.mkDerivation rec {
   '';
 
   meta = with lib; {
-    homepage = http://nuclearelephant.com/;
     description = "Community Driven Antispam Filter";
     license = licenses.agpl3;
     platforms = platforms.linux;

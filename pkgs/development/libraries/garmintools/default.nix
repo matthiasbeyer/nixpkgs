@@ -7,7 +7,6 @@ stdenv.mkDerivation {
   };
   buildInputs = [ libusb ];
   meta = {
-    homepage = https://code.google.com/archive/p/garmintools/; # community clone at https://github.com/ianmartin/garmintools
     license = stdenv.lib.licenses.gpl2;
     maintainers = [ stdenv.lib.maintainers.ocharles ];
     platforms = stdenv.lib.platforms.unix;

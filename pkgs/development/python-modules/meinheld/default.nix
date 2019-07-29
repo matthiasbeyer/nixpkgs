@@ -16,7 +16,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "High performance asynchronous Python WSGI Web Server";
-    homepage = http://meinheld.org/;
     license = licenses.bsd3;
   };
 }

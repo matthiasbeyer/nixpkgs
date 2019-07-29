@@ -12,7 +12,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Encoder/decoder and lint/validator for JSON (JavaScript Object Notation)";
-    homepage = http://deron.meranda.us/python/demjson/;
     license = licenses.lgpl3Plus;
     maintainers = with maintainers; [ bjornfor ];
     platforms = platforms.all;

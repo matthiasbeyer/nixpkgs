@@ -39,7 +39,6 @@ stdenv.mkDerivation rec {
   configureFlags = [ "--ioctl=termios" ];
 
   meta = {
-    homepage = http://elvis.vi-editor.org/;
     description = "A vi clone for Unix and other operating systems";
     license = stdenv.lib.licenses.free;
   };

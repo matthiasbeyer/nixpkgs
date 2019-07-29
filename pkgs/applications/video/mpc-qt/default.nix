@@ -19,7 +19,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Media Player Classic Qute Theater";
-    homepage = https://github.com/cmdrkotori/mpc-qt;
     license = licenses.gpl2;
     platforms = platforms.unix;
     maintainers = with maintainers; [ romildo ];

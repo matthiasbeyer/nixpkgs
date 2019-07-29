@@ -23,7 +23,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "Simple tool for statistical comparison of data sets";
-    homepage = https://git.decadent.org.uk/gitweb/?p=ministat.git;
     license = licenses.beerware;
     maintainers = [ maintainers.dezgeg ];
     platforms = platforms.linux;

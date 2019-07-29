@@ -42,7 +42,6 @@ stdenv.mkDerivation rec {
 
   meta = with stdenv.lib; {
     description = "SparQL query server (RDF storage)";
-    homepage = https://4store.danielknoell.de/;
     maintainers = with maintainers; [ raskin ];
     platforms = platforms.linux;
     broken = true; # since 2018-04-11

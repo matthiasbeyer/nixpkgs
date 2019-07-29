@@ -17,6 +17,5 @@ buildPythonPackage rec {
     description = "Integrates official client for Elasticsearch into Flask";
     license = licenses.bsd3;
     maintainers = [ maintainers.mic92 ];
-    homepage = https://github.com/cepture/foppch/flask-elastic;
   };
 }

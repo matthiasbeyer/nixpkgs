@@ -25,7 +25,6 @@ buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Light-weight and intuitive editor for Robot Framework test case files";
-    homepage = https://code.google.com/p/robotframework-ride/;
     license = licenses.asl20;
     platforms = platforms.linux;
     maintainers = with maintainers; [ bjornfor ];

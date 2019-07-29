@@ -11,7 +11,6 @@ python3Packages.buildPythonPackage rec {
 
   meta = with stdenv.lib; {
     description = "Hyperminimal https server";
-    homepage    = https://github.com/rnhmjoj/hyp;
     license     = with licenses; [gpl3Plus mit];
     maintainers = with maintainers; [ rnhmjoj ];
     platforms   = platforms.unix;

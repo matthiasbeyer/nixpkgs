@@ -21,7 +21,6 @@ stdenv.mkDerivation rec {
        * View user index statistics.
     '';
 
-    homepage = http://ptop.projects.postgresql.org/;
     platforms = platforms.linux;
     license = licenses.free; # see commands.c
   };

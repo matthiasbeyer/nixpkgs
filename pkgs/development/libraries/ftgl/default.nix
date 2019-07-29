@@ -21,7 +21,6 @@ stdenv.mkDerivation {
   enableParallelBuilding = true;
 
   meta = {
-    homepage = https://sourceforge.net/apps/mediawiki/ftgl/;
     description = "Font rendering library for OpenGL applications";
     license = stdenv.lib.licenses.gpl3Plus;
 

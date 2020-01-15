@@ -117,7 +117,6 @@ in
           port = mkOption {
             type = types.int;
             default = 5432;
-            defaultText = "5432";
             description = "Database host port.";
           };
 
@@ -156,7 +155,6 @@ in
           socket = mkOption {
             type = types.nullOr types.path;
             default = "/run/postgresql";
-            defaultText = "/run/postgresql";
             example = "/run/postgresql";
             description = "Path to the unix socket file to use for authentication for local connections.";
           };
@@ -220,7 +218,7 @@ in
           type = types.str;
           default = "consolemail://";
           description = ''
-            Configure email sending. By default, it outputs emails to console instead of sending them. See https://docs.funkwhale.audio/configuration.html#email-config for details.
+            Configure email sending. By default, it outputs emails to console instead of sending them. See <link xlink:href="https://docs.funkwhale.audio/configuration.html#email-config"/> for details.
           '';
           example = "smtp+ssl://user@:password@youremail.host:465";
         };
@@ -246,14 +244,14 @@ in
             type = types.str;
             default = "/srv/funkwhale/static";
             description = ''
-              Where static files (such as API css or icons) should be compiled on your system ? Ensure this directory actually exists.
+              Where static files (such as API css or icons) should be compiled on your system. Ensure this directory actually exists.
             '';
           };
 
           djangoSecretKey = mkOption {
             type = types.str;
             description = ''
-              Django secret key. Generate one using `openssl rand -base64 45` for example.
+              Django secret key. Generate one using <command>openssl rand -base64 45</command> for example.
             '';
             example = "6VhAWVKlqu/dJSdz6TVgEJn/cbbAidwsFvg9ddOwuPRssEs0OtzAhJxLcLVC";
           };
@@ -306,12 +304,12 @@ in
         }
       ];
 
-      users.users = optionalAttrs (cfg.user == "funkwhale") (singleton
-        { name = "funkwhale";
-          group = cfg.group;
-        });
+      users.users.funkwhale = mkIf (cfg.user == "funkwhale") {
+        name = "funkwhale";
+        group = cfg.group;
+      };
 
-      users.groups = optionalAttrs (cfg.group == "funkwhale") (singleton { name = "funkwhale"; });
+      users.groups.funkwhale = mkIf (cfg.group == "funkwhale") {};
 
       services.postgresql = mkIf cfg.database.createLocally {
         enable = true;
@@ -455,7 +453,6 @@ in
       let serviceConfig = {
         User = "${cfg.user}";
         WorkingDirectory = "${pkgs.funkwhale}";
-        EnvironmentFile =  "${funkwhaleEnvFile}";
       };
       in {
         funkwhale-psql-init = mkIf cfg.database.createLocally {
@@ -465,7 +462,10 @@ in
           before   = [ "funkwhale-init.service" ];
           serviceConfig = {
             User = "postgres";
-            ExecStart = '' ${config.services.postgresql.package}/bin/psql -d ${cfg.database.name}  -c 'CREATE EXTENSION IF NOT EXISTS "unaccent";CREATE EXTENSION IF NOT EXISTS "citext";' '';
+            ExecStart = ''${config.services.postgresql.package}/bin/psql \
+              -d ${cfg.database.name} \
+              -c 'CREATE EXTENSION IF NOT EXISTS "unaccent";CREATE EXTENSION IF NOT EXISTS "citext";'
+            '';
           };
         };
         funkwhale-init = {

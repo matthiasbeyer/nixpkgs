@@ -478,8 +478,8 @@ in
             Group = "${cfg.group}";
           };
           script = ''
-            ${pythonEnv}/bin/python ${pkgs.funkwhale}/manage.py migrate
-            ${pythonEnv}/bin/python ${pkgs.funkwhale}/manage.py collectstatic --no-input
+            ${python.interpreter} ${pkgs.funkwhale}/manage.py migrate
+            ${python.interpreter} ${pkgs.funkwhale}/manage.py collectstatic --no-input
             if ! test -e ${cfg.dataDir}/createSuperUser.sh; then
               echo "#!/bin/sh
 

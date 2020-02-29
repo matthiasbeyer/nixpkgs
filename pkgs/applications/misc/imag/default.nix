@@ -9,13 +9,13 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "imag";
-  version = "0.10.0";
+  version = "0.10.1";
 
   src = fetchFromGitHub {
     owner = "matthiasbeyer";
     repo = pname;
     rev = "v${version}";
-    sha256 = "1rkl4n3x2dk9x7705zsqjlxh92w7k6jkc27zqf18pwfl3fzz8f8p";
+    sha256 = "0f9915f083z5qqcxyavj0w6m973c8m1x7kfb89pah5agryy5mkaq";
   };
 
   nativeBuildInputs = [ pkg-config ];
@@ -24,8 +24,7 @@ rustPlatform.buildRustPackage rec {
 
   LIBCLANG_PATH = "${llvmPackages.libclang}/lib";
 
-  cargoPatches = [ ./cargo-lock.patch ];
-  cargoSha256 = "11l38wx5hi8a6gk4biqr11i05b0aa3mjphmzh6b8np9ghn0iym58";
+  cargoSha256 = "0n8cw70qh8g4hfwfaxwwxbrrx5hm2z037z8kdhvdpqkxljl9189x";
 
   checkPhase = ''
     cargo test -- \

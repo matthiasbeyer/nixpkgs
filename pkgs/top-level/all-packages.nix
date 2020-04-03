@@ -21203,6 +21203,8 @@ in
 
   peek = callPackage ../applications/video/peek { };
 
+  peertube = callPackage ../servers/peertube { };
+
   pflask = callPackage ../os-specific/linux/pflask {};
 
   photoqt = libsForQt5.callPackage ../applications/graphics/photoqt { };

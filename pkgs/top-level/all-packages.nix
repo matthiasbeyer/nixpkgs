@@ -21203,7 +21203,9 @@ in
 
   peek = callPackage ../applications/video/peek { };
 
-  peertube = callPackage ../servers/peertube { };
+  peertube = callPackage ../servers/peertube {
+    nodejs = pkgs.nodejs-10_x;
+  };
 
   pflask = callPackage ../os-specific/linux/pflask {};
 

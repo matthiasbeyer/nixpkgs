@@ -8371,6 +8371,8 @@ in
 
   tpm2-pkcs11 = callPackage ../misc/tpm2-pkcs11 { };
 
+  tpm2-tss-engine = callPackage ../tools/security/tpm2-tss-engine { };
+
   tpm2-tools = callPackage ../tools/security/tpm2-tools { };
 
   trezor-udev-rules = callPackage ../os-specific/linux/trezor-udev-rules {};

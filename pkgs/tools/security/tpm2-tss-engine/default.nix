@@ -2,10 +2,17 @@
 , fetchFromGitHub
 , lib
 , pkg-config
+, autoreconfHook
+, autoconf
+, autoconf-archive
+, automake
+, libtool
 , makeWrapper
 , curl
 , openssl
 , tpm2-tss
+, pandoc
+, doxygen
 }:
 
 stdenv.mkDerivation rec {
@@ -19,21 +26,32 @@ stdenv.mkDerivation rec {
     sha256 = "1pwc38izkk50s73xzcca1l5h265lmh4hcgpfq8lmbv5grq2qdal8";
   };
 
-  nativeBuildInputs = [ pkg-config makeWrapper ];
+  nativeBuildInputs = [
+    pkg-config
+    makeWrapper
+    autoreconfHook
+    autoconf
+    autoconf-archive
+    automake
+    libtool
+    pandoc
+    doxygen
+  ];
+
   buildInputs = [
     curl openssl tpm2-tss
   ];
 
-  #preFixup = let
-  #  ldLibraryPath = lib.makeLibraryPath ([
-  #    tpm2-tss
-  #  ];
-  #in ''
-  #  for bin in $out/bin/*; do
-  #    wrapProgram $bin \
-  #      --suffix LD_LIBRARY_PATH : "${ldLibraryPath}"
-  #  done
-  #'';
+  preFixup = let
+    ldLibraryPath = lib.makeLibraryPath ([
+      tpm2-tss
+    ]);
+  in ''
+    for bin in $out/bin/*; do
+      wrapProgram $bin \
+        --suffix LD_LIBRARY_PATH : "${ldLibraryPath}"
+    done
+  '';
 
   meta = with lib; {
     description = "OpenSSL Engine for TPM2 devices";

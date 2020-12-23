@@ -39,6 +39,7 @@ brennanfee/vim-gui-position@main
 bronson/vim-trailing-whitespace
 brooth/far.vim
 buoto/gotests-vim
+camspiers/animate.vim
 camspiers/lens.vim
 carlitux/deoplete-ternjs
 ccarpita/rtorrent-syntax-file
@@ -59,6 +60,7 @@ christoomey/vim-sort-motion
 christoomey/vim-tmux-navigator
 chuling/ci_dark
 ckarnell/antonys-macro-repeater
+clangd/coc-clangd
 cloudhead/neovim-fuzzy
 CoatiSoftware/vim-sourcetrail
 cocopon/iceberg.vim

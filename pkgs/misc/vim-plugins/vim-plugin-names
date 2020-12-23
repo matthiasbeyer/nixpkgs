@@ -496,6 +496,7 @@ RRethy/vim-hexokinase
 RRethy/vim-illuminate
 rstacruz/vim-closer
 rust-lang/rust.vim
+ryanoasis/powerline-extra-symbols
 ryanoasis/vim-devicons
 ryvnf/readline.vim
 sakhnik/nvim-gdb

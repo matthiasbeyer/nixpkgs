@@ -681,6 +681,7 @@ wakatime/vim-wakatime
 wannesm/wmgraphviz.vim
 wbthomason/packer.nvim
 weirongxu/coc-explorer
+wellle/context.vim
 wellle/targets.vim
 wellle/tmux-complete.vim
 wfxr/minimap.vim

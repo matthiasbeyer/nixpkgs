@@ -689,6 +689,7 @@ whonore/Coqtail
 will133/vim-dirdiff
 wincent/command-t
 wincent/ferret
+wincent/loupe
 wlangstroth/vim-racket
 wsdjeg/vim-fetch
 xavierd/clang_complete

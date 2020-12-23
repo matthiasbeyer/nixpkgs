@@ -567,6 +567,7 @@ thosakwe/vim-flutter
 tiagofumo/vim-nerdtree-syntax-highlight
 tikhomirov/vim-glsl
 tjdevries/nlua.nvim
+tjvr/vim-nearley
 tmhedberg/SimpylFold
 tmsvg/pear-tree
 tmux-plugins/vim-tmux

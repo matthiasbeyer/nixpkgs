@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
       items.
     '';
     license = licenses.isc;
-    maintainers = [ maintainers.matthiasbeyer ];
+    maintainers = [ ];
     platforms = platforms.all;
   };
 }

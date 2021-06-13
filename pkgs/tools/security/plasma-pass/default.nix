@@ -34,7 +34,7 @@ mkDerivation rec {
     description = "A Plasma applet to access passwords from pass, the standard UNIX password manager";
     homepage = "https://invent.kde.org/plasma/plasma-pass";
     license = licenses.lgpl21Plus;
-    maintainers = with maintainers; [ matthiasbeyer ];
+    maintainers = with maintainers; [ ];
     platforms = platforms.unix;
   };
 }

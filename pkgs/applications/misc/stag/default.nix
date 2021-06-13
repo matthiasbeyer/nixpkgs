@@ -19,7 +19,7 @@ stdenv.mkDerivation {
     homepage = "https://github.com/seenaburns/stag";
     description = "Terminal streaming bar graph passed through stdin";
     license = lib.licenses.bsdOriginal;
-    maintainers = [ lib.maintainers.matthiasbeyer ];
+    maintainers = [ ];
     platforms = lib.platforms.unix;
   };
 }

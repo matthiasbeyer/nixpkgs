@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/DaveGamble/cJSON";
     description = "Ultralightweight JSON parser in ANSI C";
     license = licenses.mit;
-    maintainers = [ maintainers.matthiasbeyer ];
+    maintainers = [ ];
     platforms = platforms.unix;
   };
 }

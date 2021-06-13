@@ -23,7 +23,7 @@ stdenv.mkDerivation rec {
   meta = {
     homepage = "http://www.vanheusden.com/multitail/";
     description = "tail on Steroids";
-    maintainers = with lib.maintainers; [ matthiasbeyer ];
+    maintainers = with lib.maintainers; [ ];
     platforms = lib.platforms.unix;
     license = lib.licenses.gpl2Plus;
   };

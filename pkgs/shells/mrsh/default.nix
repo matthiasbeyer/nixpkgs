@@ -20,7 +20,7 @@ stdenv.mkDerivation rec {
     description = "A minimal POSIX shell";
     homepage = "https://mrsh.sh";
     license = licenses.mit;
-    maintainers = with maintainers; [ matthiasbeyer ];
+    maintainers = with maintainers; [ ];
     platforms = platforms.unix;
   };
 

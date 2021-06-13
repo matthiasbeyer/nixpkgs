@@ -23,6 +23,6 @@ rustPlatform.buildRustPackage rec {
     description = "A terminal user interface for taskwarrior ";
     homepage = "https://github.com/kdheepak/taskwarrior-tui";
     license = with licenses; [ mit ];
-    maintainers = with maintainers; [ matthiasbeyer ];
+    maintainers = with maintainers; [ ];
   };
 }

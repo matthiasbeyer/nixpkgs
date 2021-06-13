@@ -35,7 +35,7 @@ stdenv.mkDerivation {
     homepage = "http://cgg.bzatek.net/";
     description = "A simple static web photo gallery, designed to be clean and easily usable";
     license = licenses.gpl2;
-    maintainers = [ maintainers.matthiasbeyer ];
+    maintainers = [ ];
     platforms = with platforms; linux ++ darwin;
   };
 }

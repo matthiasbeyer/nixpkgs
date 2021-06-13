@@ -60,6 +60,6 @@ stdenv.mkDerivation rec {
     homepage    = "https://sunaku.github.io/dasht/man";
     license     = lib.licenses.isc;
     platforms   = lib.platforms.unix; #cannot test other
-    maintainers = with lib.maintainers; [ matthiasbeyer ];
+    maintainers = with lib.maintainers; [ ];
   };
 }

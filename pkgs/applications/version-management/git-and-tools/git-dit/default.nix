@@ -53,6 +53,6 @@ buildRustPackage rec {
     # https://github.com/NixOS/nixpkgs/issues/77503
     broken = true;
     license = licenses.gpl2;
-    maintainers = with maintainers; [ Profpatsch matthiasbeyer ];
+    maintainers = with maintainers; [ Profpatsch ];
   };
 }

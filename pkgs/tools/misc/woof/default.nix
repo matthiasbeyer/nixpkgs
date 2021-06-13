@@ -26,7 +26,7 @@ stdenv.mkDerivation rec {
     description = "Web Offer One File - Command-line utility to easily exchange files over a local network";
     license = lib.licenses.gpl2Plus;
     platforms = lib.platforms.unix;
-    maintainers = with maintainers; [ matthiasbeyer ];
+    maintainers = with maintainers; [ ];
   };
 }
 

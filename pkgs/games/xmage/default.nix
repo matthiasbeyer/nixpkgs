@@ -33,7 +33,7 @@ EOS
   meta = with lib; {
     description = "Magic Another Game Engine";
     license = licenses.mit;
-    maintainers = with maintainers; [ matthiasbeyer ];
+    maintainers = with maintainers; [ ];
     homepage = "http://xmage.de/";
   };
 

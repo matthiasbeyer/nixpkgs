@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     homepage = "https://github.com/uobikiemukot/yaft";
     description = "Yet another framebuffer terminal";
     license = lib.licenses.mit;
-    maintainers = [ lib.maintainers.matthiasbeyer ];
+    maintainers = [ ];
     platforms = with lib.platforms; linux;
   };
 }

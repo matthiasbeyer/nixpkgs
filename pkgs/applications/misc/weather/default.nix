@@ -42,7 +42,7 @@ stdenv.mkDerivation rec {
     homepage = "http://fungi.yuggoth.org/weather";
     description = "Quick access to current weather conditions and forecasts";
     license = licenses.isc;
-    maintainers = [ maintainers.matthiasbeyer ];
+    maintainers = [ ];
     platforms = platforms.unix;
   };
 }

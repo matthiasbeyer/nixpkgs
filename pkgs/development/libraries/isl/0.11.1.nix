@@ -1,4 +1,4 @@
-{ lib, stdenv, fetchurl, gmp }:
+{ callPackage, lib, stdenv, fetchurl, gmp }:
 
 callPackage ./generic.nix {
   version = "0.11.1";

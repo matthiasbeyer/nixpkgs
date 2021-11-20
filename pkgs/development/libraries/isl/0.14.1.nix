@@ -1,6 +1,6 @@
-{ lib, stdenv, fetchurl, gmp }:
+{ callPackage, lib, stdenv, fetchurl, gmp }:
 
-callPackage ./generic.nix {
+callPackage ./generic.nix rec {
   version = "0.14.1";
   urls = [
     "mirror://sourceforge/libisl/libisl-${version}.tar.xz"

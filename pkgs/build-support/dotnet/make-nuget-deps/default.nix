@@ -9,16 +9,18 @@ linkFarm "${name}-nuget-deps" (nugetDeps {
     , url ? "https://www.nuget.org/api/v2/package/${pname}/${version}"
     }:
     let
-      sha256 = if (builtins.isNull hash) then
+      sha = if (builtins.isNull hash) then
         sha256
       else
         hash;
     in
     {
       name = "${pname}.${version}.nupkg";
-      inherit url sha256;
+      inherit url;
+      sha256 = sha;
       path = builtins.fetchurl {
-        inherit url sha256;
+        inherit url;
+        sha256 = sha;
       };
     };
 }) // {

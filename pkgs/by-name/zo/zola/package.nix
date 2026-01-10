@@ -53,6 +53,7 @@ rustPlatform.buildRustPackage rec {
       dandellion
       dywedir
       _0x4A6F
+      matthiasbeyer
     ];
   };
 }

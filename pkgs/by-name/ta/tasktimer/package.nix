@@ -28,6 +28,7 @@ buildGoModule rec {
     maintainers = with lib.maintainers; [
       abbe
       caarlos0
+      matthiasbeyer
     ];
     mainProgram = "tt";
   };

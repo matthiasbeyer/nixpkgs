@@ -35,7 +35,10 @@ buildGoModule rec {
     description = "Git diff pager based on delta but with a file tree, à la GitHub";
     homepage = "https://github.com/dlvhdr/diffnav";
     license = lib.licenses.mit;
-    maintainers = with lib.maintainers; [ amesgen ];
+    maintainers = with lib.maintainers; [
+      amesgen
+      matthiasbeyer
+    ];
     mainProgram = "diffnav";
   };
 }

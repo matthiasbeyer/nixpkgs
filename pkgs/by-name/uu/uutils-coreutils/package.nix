@@ -78,7 +78,9 @@ stdenv.mkDerivation (finalAttrs: {
     "SKIP_UTILS=${lib.optionalString stdenv.hostPlatform.isStatic "stdbuf"}"
   ]
   ++ lib.optionals (prefix != null) [ "PROG_PREFIX=${prefix}" ]
-  ++ lib.optionals buildMulticallBinary [ "MULTICALL=y" ];
+  ++ lib.optionals buildMulticallBinary [ "MULTICALL=y" ]
+  # Ensure we're using symlinks when building for unixoids
+  ++ lib.optionals stdenv.hostPlatform.isUnix [ "LN=ln -sf" ];
 
   env = {
     CARGO_BUILD_TARGET = stdenv.hostPlatform.rust.rustcTargetSpec;
